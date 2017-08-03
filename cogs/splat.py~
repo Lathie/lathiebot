@@ -1,0 +1,14 @@
+
+import discordbot
+
+class Splat:
+    """Splatoon maymays :^)"""
+
+    def __init__(self, bot):
+        self.bot = bot
+
+    @discordbot.commands.command(pass_context=True)
+    async def testtalk(self):
+        await self.bot.say("lol hello world programs")
+
+        return
