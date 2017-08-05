@@ -1,22 +1,21 @@
+import datetime
 from random import choice
 from glob import glob
 import discordbot
+
+#Time Formatting Utility
+def strfdelta(tdelta, fmt): #From Stack Overflow
+    d = {"days": tdelta.days}
+    d["hours"], rem = divmod(tdelta.seconds, 3600)
+    d["minutes"], d["seconds"] = divmod(rem, 60)
+    return fmt.format(**d)
+
 
 class Splat:
     """Splatoon maymays :^)"""
 
     def __init__(self, bot):
         self.bot = bot
-
-    @discordbot.commands.command(pass_context=True)
-    async def spellcheck(self):
-        """Lathie sucks at spelling"""
-        try:
-            owner = self._owner
-        except AttributeError:
-            owner = self._owner = await self.bot.get_user_info(self.bot.config.get('meta', {}).get('owner', "129335628998508545"))
-
-        return await self.bot.say(owner.mention + " you fucked up")
 
     @discordbot.commands.command(pass_context=True)
     async def marie(self):
@@ -36,6 +35,13 @@ class Splat:
             folder = choice(allowed_categories)
 
         return await self.bot.upload(choice(glob(picture_path + folder + "/*")))
+
+    @discordbot.commands.command(pass_context=True)
+    async def splatdown(self):
+        """Gives the time until the next splatfest begins"""
+        #delta = datetime.datetime(2017, 8, 4, 23) - datetime.datetime.now()
+        #return await self.bot.say(strfdelta(delta, "{hours} hours and {minutes} minutes to go :pray:"))
+        return await self.bot.say("SPLATFEST IN PROGRESS!!!")
 
 def setup(bot):
     bot.add_cog(Splat(bot))
