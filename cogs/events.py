@@ -2,7 +2,7 @@ import discordbot
 import datetime
 
 class Events:
-
+    """Event Scheduling and other cool stuff :^)"""
     def __init__(self, bot):
         self.bot = bot
         self.config = discordbot.config.Config("events.json", loop=bot.loop, directory="data")
