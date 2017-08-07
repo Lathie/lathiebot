@@ -10,9 +10,9 @@ class Lathie:
     def __init__(self, bot):
         self.bot = bot
 
-    @discordbot.commands.command(pass_context=True)
-    async def spellcheck(self):
-        """Lathie sucks at spelling"""
+    @discordbot.commands.command(pass_context=True, aliases=["spellcheck"])
+    async def bugreport(self):
+        """Lathie fucked up"""
         try:
             owner = self._owner
         except AttributeError:

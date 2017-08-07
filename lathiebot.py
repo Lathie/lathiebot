@@ -1,4 +1,3 @@
-
 import discordbot
 import asyncio
 

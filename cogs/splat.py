@@ -10,7 +10,6 @@ def strfdelta(tdelta, fmt): #From Stack Overflow
     d["minutes"], d["seconds"] = divmod(rem, 60)
     return fmt.format(**d)
 
-
 class Splat:
     """Splatoon maymays :^)"""
 
