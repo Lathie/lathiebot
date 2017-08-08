@@ -22,6 +22,7 @@ class Splat:
         """Uploads a random picture of the best girl Marie :)"""
         return await self.bot.upload(choice(glob("./assets/pictures/marie/*")))
 
+    #TODO MOVE THIS TO IT'S OWN COG
     @discordbot.commands.command(pass_context=True, aliases=['picture'])
     async def image(self, ctx, *, folder=""):
         """Uploads a random picture from a specified catagory"""
