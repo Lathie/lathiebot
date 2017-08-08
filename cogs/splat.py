@@ -4,6 +4,7 @@ from glob import glob
 import discordbot
 
 #Time Formatting Utility
+#TODO Create a utilities file for real tho
 def strfdelta(tdelta, fmt): #From Stack Overflow
     d = {"days": tdelta.days}
     d["hours"], rem = divmod(tdelta.seconds, 3600)
